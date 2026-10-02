@@ -16,9 +16,13 @@
   --shadow-white: 4px 4px 0 #fff;
 
   /*grid template columns */
-  --grid-template-columns-auto: repeat(auto-fit, minmax(200px, 1fr))
+  --grid-template-columns-auto: repeat(auto-fit, minmax(200px, 1fr));
+
 
 }
+
+  /* dark mode */
+  @custom-variant dark (.dark &);
 
 body {
   font-family: var(--font-Outfit);
