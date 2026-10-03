@@ -18,13 +18,33 @@ export const metadata = {
   description: "Software Dev Portfolio for Nick Soltau",
 };
 
+// Runs in <head> before the first paint, so the right theme is on <html>
+// before the browser draws anything. A saved choice wins; with no saved
+// choice, follow the visitor's OS setting.
+const themeScript = `
+(function () {
+  try {
+    var saved = localStorage.theme;
+    var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    if (saved === 'dark' || (saved !== 'light' && prefersDark)) {
+      document.documentElement.classList.add('dark');
+    }
+  } catch (e) {}
+})();
+`;
+
 export default function RootLayout({ children }) {
   return (
-    <html className="scroll-smooth"
-      lang="en">
-       <body className={`${outfit.variable} ${ovo.variable} antialiased leading-8 overflow-x-hidden dark:bg-darkTheme dark:text-white`}>
-          {children}
-        </body>
-    </html>
+
+<html className="scroll-smooth"
+  lang="en" suppressHydrationWarning>
+  <head>
+    <script dangerouslySetInnerHTML={{ __html: themeScript }} />
+  </head>
+   <body className={`${outfit.variable} ${ovo.variable} antialiased leading-8 overflow-x-hidden dark:bg-darkTheme dark:text-white`}>
+      {children}
+    </body>
+</html>
+
   );
 }

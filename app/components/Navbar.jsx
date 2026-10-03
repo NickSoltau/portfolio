@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from 'react'
 import Image from 'next/image'
 import { assets } from '@/assets/assets'
 
-const Navbar = ({isDarkMode, setIsDarkMode}) => {
+const Navbar = ({isDarkMode, toggleDarkMode}) => {
 
     const [isScroll, setIsScroll] = useState(false)
     const sideMenuRef = useRef();
@@ -44,7 +44,7 @@ const Navbar = ({isDarkMode, setIsDarkMode}) => {
 
             <div className='flex items-center gap-4'>
 
-                <button onClick={() => setIsDarkMode(prev => !prev)}>
+                <button onClick={toggleDarkMode}>
                     <Image src={isDarkMode? assets.sun_icon : assets.moon_icon} alt='' className='w-6 cursor-pointer' />
                 </button>
 

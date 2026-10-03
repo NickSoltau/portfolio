@@ -6,37 +6,34 @@ import Services from "./components/Services";
 import Work from "./components/Work";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
-import { useEffect, useState } from "react";
+import { useSyncExternalStore } from "react";
 
 
 export default function Home() {
 
-const [isDarkMode, setIsDarkMode] = useState(false);
+// The theme lives on <html>. The script in layout.js sets it before first
+// paint, and React just reads it from there.
+const isDarkMode = useSyncExternalStore(
+  (onChange) => {
+    const observer = new MutationObserver(onChange)
+    observer.observe(document.documentElement, { attributes: true, attributeFilter: ['class'] })
+    return () => observer.disconnect()
+  },
+  () => document.documentElement.classList.contains('dark'),
+  () => false // what the server assumes
+)
 
-useEffect(() => {
-  if(localStorage.theme === 'dark' || (!('theme' in localStorage) && 
-  window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-    setIsDarkMode(true)
-  } else{
-    setIsDarkMode(false)
-  }
-}, [])
-
-useEffect(() => {
-  if(isDarkMode) {
-    document.documentElement.classList.add('dark');
-    localStorage.theme = 'dark';
-  }
-  else {
-    document.documentElement.classList.remove('dark');
-    localStorage.theme = "";
-  }
-
-}, [isDarkMode])
+const toggleDarkMode = () => {
+  const next = !isDarkMode
+  document.documentElement.classList.toggle('dark', next)
+  try {
+    localStorage.theme = next ? 'dark' : 'light'
+  } catch {}
+}
 
   return (
     <>
-    <Navbar isDarkMode= {isDarkMode} setIsDarkMode= {setIsDarkMode} />
+    <Navbar isDarkMode= {isDarkMode} toggleDarkMode= {toggleDarkMode} />
     <Header isDarkMode= {isDarkMode} />
     <About isDarkMode= {isDarkMode} />
     <Services isDarkMode= {isDarkMode} />
