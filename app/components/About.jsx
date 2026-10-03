@@ -34,7 +34,7 @@ const about = ({isDarkMode}) => {
             whileInView= {{opacity: 1, scale: 1}}
             transition= {{duration: 0.6}}
             className='w-64 sm:w-80 rounded-3xl max-w-none'>
-                <Image src={assets.headshot} alt='' className='w-full rounded-3xl' />
+                <Image src={assets.camping} alt='' className='w-full rounded-3xl' />
             </motion.div>
             <motion.div 
             initial={{opacity: 0}}
@@ -78,7 +78,7 @@ const about = ({isDarkMode}) => {
                 initial={{opacity: 0}}
                 whileInView= {{opacity: 1}}
                 transition= {{duration: 0.6, delay:1.5}} 
-                className='flex items-centergap-3 sm:gap-5'>
+                className='flex items-center gap-3 sm:gap-5'>
                     {toolsData.map((tool, index) => (
                         <motion.li 
                         whileHover={{scale: 1.1}}

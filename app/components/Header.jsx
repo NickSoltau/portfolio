@@ -11,7 +11,7 @@ const Header = () => {
         whileInView={{ scale: 1 }}
         transition={{duration: 0.8, type: 'spring',stiffness: 100}}>
             <Image src={assets.headshot} 
-            alt=''
+            alt='headshot'
             className='rounded-full w-32'/> 
         </motion.div>
             <motion.h3
@@ -55,7 +55,7 @@ const Header = () => {
                 whileInView={{y: 0, opacity: 1 }}
                 transition={{duration: 0.6, delay: 1.2}}
                 href="/NickSoltau_Resume.pdf" download 
-                className='px-10 py-3 border rounded-full border-gray-500 flex items-center gap- bg-white dark:text-black'>my resume <Image src={assets.download_icon} 
+                className='px-10 py-3 border rounded-full border-gray-500 flex items-center gap-4 bg-white dark:text-black'>my resume <Image src={assets.download_icon} 
                 alt='' className='w-4' /></motion.a>
             </div>
         </div>

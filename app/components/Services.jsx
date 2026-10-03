@@ -32,7 +32,7 @@ const Services = () => {
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem, labore! Officia, debitis quidem! Eos quam quidem nostrum accusamus earum voluptatum?
         </motion.p>
 
-        motion.<div 
+        <motion.div 
         initial={{opacity: 0}}
         whileInView= {{opacity: 1}}
         transition= {{duration: 0.6, delay:0.9}}
@@ -52,7 +52,7 @@ const Services = () => {
                 </motion.div>
 
             ))}
-        </div>
+        </motion.div>
     </motion.div>
   )
 }

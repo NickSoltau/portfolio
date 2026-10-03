@@ -40,7 +40,7 @@ const Contact = () => {
         
         <motion.h4 
         initial={{y: -20, opacity: 0}}
-        whileInView={{u: 0, opacity: 1}}
+        whileInView={{y: 0, opacity: 1}}
         transition={{delay: 0.3, duration: 0.5}}  
         className='text-center mb-2 text-lg font-Ovo'>Connect With Me</motion.h4>
         

@@ -15,14 +15,14 @@ const Navbar = ({isDarkMode, setIsDarkMode}) => {
     }
 
     useEffect(()=> {
-        window.addEventListener('scroll', ()=>{
-            if(scrollY > 50) {
-                setIsScroll(true)
-            } else {
-                setIsScroll(false)
-            }
-        })
-    })
+        const handleScroll = () => setIsScroll(window.scrollY > 50)
+
+        handleScroll() // check once on load, in case the page starts scrolled
+        window.addEventListener('scroll', handleScroll)
+
+        // cleanup: runs when the component goes away
+        return () => window.removeEventListener('scroll', handleScroll)
+    }, [])
 
   return (
     <>
@@ -34,7 +34,7 @@ const Navbar = ({isDarkMode, setIsDarkMode}) => {
                 <Image src={assets.logoNick} className='w-20 cursor-pointer mr-14 rounded-2xl' alt='logo'/>
             </a>
 
-            <ul className={`hidden md:flex items-center gap-6 lg:gap-8 rounded-full px-12 py-3 ${isScroll ? "" : " bg-white shadow-sm bg-opacity-50 dark border dark:border-white/50 dark:bg-transparent"} `}>
+            <ul className={`hidden md:flex items-center gap-6 lg:gap-8 rounded-full px-12 py-3 ${isScroll ? "" : " bg-white/50 shadow-sm dark border dark:border-white/50 dark:bg-transparent"} `}>
                 <li><a className= 'font-Ovo' href='#top'>Home</a></li>
                 <li><a className= 'font-Ovo' href='#services'>Services</a></li>
                 <li><a className= 'font-Ovo' href='#work'>My Work</a></li>
