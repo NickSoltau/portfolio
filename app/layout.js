@@ -14,8 +14,9 @@ const ovo  = Ovo({
 });
 
 export const metadata = {
-  title: "Portfolio",
-  description: "Software Dev Portfolio for Nick Soltau",
+  title: "Nick Soltau | Frontend Developer",
+  description:
+    "Frontend developer based in Ohio, building with React and Next.js. See my projects, background, and how to reach me.",
 };
 
 // Runs in <head> before the first paint, so the right theme is on <html>

@@ -36,7 +36,6 @@ const toggleDarkMode = () => {
     <Navbar isDarkMode= {isDarkMode} toggleDarkMode= {toggleDarkMode} />
     <Header isDarkMode= {isDarkMode} />
     <About isDarkMode= {isDarkMode} />
-    <Services isDarkMode= {isDarkMode} />
     <Work isDarkMode= {isDarkMode} />
     <Contact isDarkMode= {isDarkMode} />
     <Footer isDarkMode= {isDarkMode} />

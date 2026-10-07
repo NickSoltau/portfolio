@@ -84,25 +84,40 @@ export const assets = {
 
 export const workData = [
     {
-        title: 'Frontend project',
-        description: 'Web Design',
+        title: 'CraftDesk',
+        description: 'Booking and deposit platform for small service businesses. A customer requests a job, the shop approves it, the customer pays a deposit through Stripe, and both sides track its status. Emails go out automatically at each step.',
+        stack: ['React', 'Vite', 'Tailwind', 'Supabase', 'Stripe', 'Resend'],
+        live: 'https://craft-desk-rho.vercel.app',
+        github: 'https://github.com/NickSoltau/craftDesk',
         bgImage: '/work-1.png',
     },
     {
-        title: 'Geo based app',
-        description: 'Mobile App',
-        bgImage: '/work-2.png',
-    },
-    {
-        title: 'Photography site',
-        description: 'Web Design',
+        title: 'Summarist',
+        description: 'Book-summary app where readers browse and read condensed non-fiction titles. Includes account sign-in and a premium subscription tier for unlocking more books.',
+        stack: ['Next.js', 'TypeScript', 'Redux Toolkit', 'Firebase Auth', 'Stripe'],
+        live: 'https://summarist-swart.vercel.app',
+        github: 'https://github.com/NickSoltau/summarist',
         bgImage: '/work-3.png',
     },
     {
-        title: 'UI/UX designing',
-        description: 'UI/UX Design',
+        title: 'Ultraverse NFT Marketplace',
+        description: 'A static starter template that I turned into a working app: live API data on every page, skeleton loading states, working Explore filters, a functioning auction countdown, and scroll animations.',
+        stack: ['React', 'Axios', 'React Router'],
+        live: 'https://nick-internship-seven.vercel.app',
+        github: 'https://github.com/NickSoltau/nft-marketplace-api-integration',
         bgImage: '/work-4.png',
     },
+    {
+        title: 'Skinstric AI Powered Skincare',
+        description: 'Front-end internship project built from Figma specs. Uses camera or upload image to perform an AI analysis API returns results with confidence rings. Features animated diamond transitions and a responsive layout.',
+        stack: ['Next.js', 'React', 'Tailwind CSS', 'Fetch API'],
+        live: 'https://skinstric-phi-olive.vercel.app/',
+        github: 'https://github.com/NickSoltau/Skinstric',
+        bgImage: '/work-2.png',
+    },
+
+
+
 ]
 
 export const serviceData = [
