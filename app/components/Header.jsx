@@ -19,7 +19,7 @@ const Header = () => {
                 whileInView={{y: 0, opacity: 1 }}
                 transition={{duration: 0.6, delay: 0.3}}
             className='flex gap-2 items-end text-xl md:text-2xl mb-3 font-Ovo'>
-                Hey! I'm Nick Soltau <Image src={assets.hand_icon} alt=''
+                Hey! I&apos;m Nick Soltau <Image src={assets.hand_icon} alt=''
             className='w-6' /></motion.h3>
 
             <motion.h1 
@@ -36,9 +36,8 @@ const Header = () => {
                 whileInView={{opacity: 1 }}
                 transition={{duration: 0.6, delay: 0.7}}
             className='max-w-2xl mx-auto font-Ovo'>
-                I am a frontend developer that is constantly learning and trying to be 
-                a better version of myself each day. I am terribly optimistic and 
-                team oriented.
+                I’m a frontend developer who’s always learning, 
+                and I’m an optimist who likes working with a team.
             </motion.p>
 
             <div className='flex flex-col sm:flex-row items-center gap-4 mt-4'>

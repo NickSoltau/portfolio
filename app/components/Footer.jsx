@@ -2,23 +2,11 @@ import React from 'react'
 import Image from 'next/image'
 import { assets } from '@/assets/assets'
 
-const Footer = ({isDarkMode}) => {
+const Footer = () => {
   return (
     <div className='mt-20'>
         <div className='text-center'>
-            <Image src={assets.logoNick} alt='logo'  className='w-36 mx-auto'/>
-           
-              <a 
-                href="mailto:Nick.Soltau@gmail.com" 
-                className="flex w-max items-center mt-4 gap-2 mx-auto hover:opacity-80 transition-opacity"
-              ><Image 
-                src={isDarkMode ? assets.mail_icon_dark : assets.mail_icon} 
-                alt="Email icon" 
-                className="w-6"
-                />
-                Nick.Soltau@gmail.com
-              </a>
-
+            <Image src={assets.logoNick} alt='Nick Soltau logo' className='w-36 mx-auto'/>
         </div>
 
         <div className='text-center sm:flex items-center justify-between border-t border-gray-400 mx-[10%] mt-12 py-6'>
@@ -26,12 +14,11 @@ const Footer = ({isDarkMode}) => {
               © 2026 Nicholas Soltau. All rights reserved.
             </p>
             <ul className='flex items-center gap-10 justify-center mt-4 sm:mt-0'>
-                <li><a href='https://github.com/NickSoltau' >Github</a></li>
-                <li><a href='https://www.linkedin.com/in/nicholas-soltau-075798376' >Linkedin</a></li>
+                <li><a href='mailto:Nick.Soltau@gmail.com' className='hover:opacity-80 transition-opacity'>Email</a></li>
+                <li><a href='https://www.linkedin.com/in/nicholas-soltau-075798376' target='_blank' rel='noopener noreferrer' className='hover:opacity-80 transition-opacity'>LinkedIn</a></li>
+                <li><a href='https://github.com/NickSoltau' target='_blank' rel='noopener noreferrer' className='hover:opacity-80 transition-opacity'>GitHub</a></li>
             </ul>
         </div>
-
-
     </div>
   )
 }

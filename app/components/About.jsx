@@ -1,7 +1,37 @@
 import React from 'react'
 import Image from 'next/image'
-import { assets, infoList, toolsData } from '@/assets/assets'
+import { assets } from '@/assets/assets'
+import { techGroups, contactLinks } from '@/assets/tech'
 import { motion } from 'motion/react'
+
+// One square tile: logo on top, name underneath. Turns into a link when `url` is set.
+const Tile = ({ tool, isDarkMode }) => {
+  const src = isDarkMode && tool.iconDark ? tool.iconDark : tool.icon
+  const isWebLink = tool.url?.startsWith('http')
+  const tileClass = `flex flex-col items-center justify-center gap-2 w-20 sm:w-24 py-3 border border-gray-400 rounded-lg hover:-translate-y-1 duration-500 dark:border-white/50 ${tool.url ? 'cursor-pointer' : ''}`
+  const content = (
+    <>
+      <Image src={src} alt='' width={28} height={28} className={`w-6 h-6 sm:w-7 sm:h-7 ${tool.invert ? 'dark:invert' : ''}`} />
+      <span className='text-xs text-gray-600 dark:text-white/80'>{tool.name}</span>
+    </>
+  )
+
+  return (
+    <motion.li whileHover={{scale: 1.1}}>
+      {tool.url ? (
+        <a
+          href={tool.url}
+          {...(isWebLink && { target: '_blank', rel: 'noopener noreferrer' })}
+          aria-label={tool.name}
+          className={tileClass}>
+          {content}
+        </a>
+      ) : (
+        <div className={tileClass}>{content}</div>
+      )}
+    </motion.li>
+  )
+}
 
 const about = ({isDarkMode}) => {
   return (
@@ -36,61 +66,57 @@ const about = ({isDarkMode}) => {
             className='w-64 sm:w-80 rounded-3xl max-w-none'>
                 <Image src={assets.camping} alt='' className='w-full rounded-3xl' />
             </motion.div>
+
             <motion.div 
             initial={{opacity: 0}}
             whileInView= {{opacity: 1}}
             transition= {{duration: 0.6, delay: 0.8}}
             className='flex-1'>
+                {/* DRAFT paragraph: edit freely */}
                 <p className='mb-10 max-w-2xl font-Ovo'>
-                    Driven by a love for problem-solving and clean design, I transitioned 
-                    into Frontend Development to build engaging web experiences. There is 
-                    nothing more rewarding than bringing a client’s vision to life and seeing 
-                    their positive reaction to a finished project. I look forward to 
-                    contributing my skills to a collaborative team while learning from the 
-                    talented people around me.
+                    I&apos;m a frontend developer who came to code after years in healthcare and
+                    mechanical contracting, so I&apos;m used to getting the details right
+                    and working with people who depend on the result. I hold a BA in Philosophy and
+                    an associate degree in Respiratory Therapy, and I&apos;ve added the AWS Certified
+                    Cloud Practitioner credential plus Anthropic&apos;s Claude 101 and Claude Code 101
+                    courses to my frontend training. I build with React and Next.js, most recently
+                    craftDesk, a booking and payments app for small service shops, and I&apos;m looking
+                    for a junior role where I can keep learning from a team.
                 </p>
 
                 <motion.ul 
                 initial={{opacity: 0}}
                 whileInView= {{opacity: 1}}
-                transition= {{duration: 0.8, delay:1}}
-                className='grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-2xl'>
-                    {infoList.map(({icon, iconDark, title, description}, index)=> (
-
-                        <motion.li 
-                        whileHover={{scale: 1.05}}
-                        className='border-[0.5px] border-gray-400 rounded-xl p-6 cursor-pointer hover:bg-lightHover hover:-translate-y-1 duration-500 hover:shadow-black dark:border-white dark:hover:shadow-white dark:hover:bg-darkHover/50' 
-                        key={index}>
-                            <Image src={isDarkMode? iconDark : icon} alt={title} className='w-7 mt-3'/>
-                            <h3 className='my-4 font-semibold text-gray-700 dark:text-white '>{title}</h3>
-                            <p className='text-gray-600 text-sm dark:text-white/80'>{description}</p>
-                        </motion.li>
+                transition= {{duration: 0.8, delay: 1}}
+                className='flex flex-wrap gap-3 sm:gap-4'>
+                    {contactLinks.map((link) => (
+                        <Tile key={link.name} tool={link} isDarkMode={isDarkMode} />
                     ))}
                 </motion.ul>
-
-                <motion.h4 
-                initial={{y: 20, opacity: 0}}
-                whileInView= {{y: 0, opacity: 1}}
-                transition= {{duration: 0.5, delay:1.3}}
-                className='my-6 text-gray-700 font-Ovo dark:text-white/80'>Tools I use</motion.h4>
-
-                <motion.ul 
-                initial={{opacity: 0}}
-                whileInView= {{opacity: 1}}
-                transition= {{duration: 0.6, delay:1.5}} 
-                className='flex items-center gap-3 sm:gap-5'>
-                    {toolsData.map((tool, index) => (
-                        <motion.li 
-                        whileHover={{scale: 1.1}}
-                        className='flex items-center justify-center w-12 sm:w-14 aspect-square border border-gray-400 rounded-lg cursor-pointer hover:-translate-y-1 duration-500' 
-                        key={index}>
-                            <Image src={tool} alt='Tool' className='w-5 sm:w-7' />
-                        </motion.li>
-                    ))}
-                </motion.ul>
-
             </motion.div>
         </motion.div>
+
+        <div className='grid grid-cols-1 md:grid-cols-2 gap-10'>
+            {techGroups.map((group) => (
+                <div key={group.label}>
+                    <motion.h3 
+                    initial={{y: 20, opacity: 0}}
+                    whileInView= {{y: 0, opacity: 1}}
+                    transition= {{duration: 0.5, delay: 0.3}}
+                    className='mb-6 text-xl text-gray-700 font-Ovo dark:text-white/80'>{group.label}</motion.h3>
+
+                    <motion.ul 
+                    initial={{opacity: 0}}
+                    whileInView= {{opacity: 1}}
+                    transition= {{duration: 0.6, delay: 0.5}} 
+                    className='flex flex-wrap items-center gap-3 sm:gap-4'>
+                        {group.items.map((tool) => (
+                            <Tile key={tool.name} tool={tool} isDarkMode={isDarkMode} />
+                        ))}
+                    </motion.ul>
+                </div>
+            ))}
+        </div>
     </motion.div>
   )
 }
