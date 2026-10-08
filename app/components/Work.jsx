@@ -55,6 +55,25 @@ const Work = ({isDarkMode}) => {
 
                         <p className='text-sm leading-6 text-gray-700 dark:text-white/80'>{project.description}</p>
 
+                        {project.tryIt && (
+                            <details className='rounded-lg border border-gray-400 p-3 text-sm dark:border-white/50'>
+                                <summary className='cursor-pointer font-medium'>How to explore this demo</summary>
+                                <ol className='mt-3 flex list-decimal flex-col gap-2 pl-5 text-gray-700 dark:text-white/80'>
+                                    {project.tryIt.steps.map((step) => (
+                                        <li key={step.title}>
+                                            <span className='font-medium text-gray-800 dark:text-white'>{step.title}.</span> {step.detail}
+                                            {step.href && (
+                                                <> <a href={step.href} target='_blank' rel='noopener noreferrer' className='underline hover:opacity-80'>{step.linkLabel} ↗</a></>
+                                            )}
+                                        </li>
+                                    ))}
+                                </ol>
+                                {project.tryIt.payment && (
+                                    <p className='mt-3 text-gray-700 dark:text-white/80'>{project.tryIt.payment}</p>
+                                )}
+                            </details>
+                        )}
+
                         <ul className='flex flex-wrap gap-2'>
                             {project.stack?.map((tech) => (
                                 <li key={tech} className='rounded-full border border-gray-400 px-3 py-1 text-xs text-gray-700 dark:border-white/50 dark:text-white/80'>

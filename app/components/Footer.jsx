@@ -6,7 +6,9 @@ const Footer = () => {
   return (
     <div className='mt-20'>
         <div className='text-center'>
-            <Image src={assets.logoNick} alt='Nick Soltau logo' className='w-36 mx-auto'/>
+            <a href='#top' aria-label='Back to top' className='block w-36 mx-auto hover:opacity-80 transition-opacity'>
+                <Image src={assets.logoNick} alt='Nick Soltau logo' className='w-full'/>
+            </a>
         </div>
 
         <div className='text-center sm:flex items-center justify-between border-t border-gray-400 mx-[10%] mt-12 py-6'>

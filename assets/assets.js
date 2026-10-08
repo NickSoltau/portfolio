@@ -42,6 +42,15 @@ export const workData = [
         live: 'https://craft-desk-rho.vercel.app',
         github: 'https://github.com/NickSoltau/craftDesk',
         bgImage: '/work-1.png',
+        tryIt: {
+            steps: [
+                { title: 'Book as a customer', detail: 'No login needed. Fill out the form and submit it.', href: 'https://craft-desk-rho.vercel.app/book/mikes-glove-shop', linkLabel: 'Booking page' },
+                { title: 'Log in as the shop owner', detail: 'Email: Mike@mikesgloves.com | Password: Mike123', href: 'https://craft-desk-rho.vercel.app/login', linkLabel: 'Owner login' },
+                { title: 'Approve the request', detail: 'It appears under Pending Requests. Approving it generates a Stripe payment link automatically.' },
+                { title: 'Track the job', detail: 'In the Active Jobs tab, move it through Deposit Paid, In Progress, Ready for Pickup, and Completed.' },
+            ],
+            payment: 'Stripe runs in test mode, so no real charges. Pay with card 4242 4242 4242 4242, any future expiry, any 3-digit CVC, and any 5-digit ZIP.',
+        },
     },
     {
         title: 'Summarist',
