@@ -36,8 +36,7 @@ const Header = () => {
                 whileInView={{opacity: 1 }}
                 transition={{duration: 0.6, delay: 0.7}}
             className='max-w-2xl mx-auto font-Ovo'>
-                I’m a frontend developer who’s always learning, 
-                and I’m an optimist who likes working with a team.
+                I build responsive React and Next.js apps, from booking and payments platforms to AI-powered web apps. I’m looking for a frontend developer role on a team where I can keep growing.
             </motion.p>
 
             <div className='flex flex-col sm:flex-row items-center gap-4 mt-4'>
