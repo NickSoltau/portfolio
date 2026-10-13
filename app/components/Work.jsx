@@ -2,30 +2,34 @@ import { workData } from '@/assets/assets'
 import React from 'react'
 import { motion } from 'motion/react'
 
+// Start animating 200px before an element scrolls into view, and only once,
+// so fast scrolling never shows a blank gap.
+const VIEWPORT = { once: true, margin: '0px 0px 200px 0px' }
+
 const Work = ({isDarkMode}) => {
   return (
-    <motion.div
-    initial={{ opacity: 0}}
-    whileInView={{opacity: 1}}
-    transition={{duration: 1}}
+    <div
     id='work' className='w-full px-[12%] py-10 scroll-mt-20'>
 
         <motion.h4
         initial={{y: -20, opacity: 0}}
         whileInView={{y: 0, opacity: 1}}
-        transition={{delay: 0.3, duration: 0.5}}
+        viewport={VIEWPORT}
+        transition={{delay: 0.07, duration: 0.5}}
         className='text-center mb-2 text-lg font-Ovo'>My Portfolio</motion.h4>
 
         <motion.h2
         initial={{y: -20, opacity: 0}}
         whileInView={{y: 0, opacity: 1}}
-        transition={{delay: 0.5, duration: 0.5}}
+        viewport={VIEWPORT}
+        transition={{delay: 0.12, duration: 0.5}}
         className='text-center text-5xl font-Ovo'>My Latest Work</motion.h2>
 
         <motion.p
         initial={{opacity: 0}}
         whileInView={{opacity: 1}}
-        transition={{delay: 0.7, duration: 0.5}}
+        viewport={VIEWPORT}
+        transition={{delay: 0.17, duration: 0.5}}
         className='text-center max-w-2xl mx-auto mt-5 mb-12 font-Ovo '>
             Welcome to my portfolio! Here, you will find some of the projects I have
             worked on recently. I tried to include a variety so it doesn&apos;t show different versions of the same thing.
@@ -34,7 +38,8 @@ const Work = ({isDarkMode}) => {
         <motion.div
         initial={{opacity: 0}}
         whileInView={{opacity: 1}}
-        transition={{delay: 0.9, duration: 0.6}}
+        viewport={VIEWPORT}
+        transition={{delay: 0.23, duration: 0.5}}
         className='grid grid-cols-1 md:grid-cols-2 gap-8 my-10'>
             {workData.map((project, index)=>(
                 <motion.article
@@ -97,7 +102,7 @@ const Work = ({isDarkMode}) => {
             ))}
         </motion.div>
 
-    </motion.div>
+    </div>
   )
 }
 
