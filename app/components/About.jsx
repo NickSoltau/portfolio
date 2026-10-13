@@ -4,6 +4,10 @@ import { assets } from '@/assets/assets'
 import { techGroups, contactLinks } from '@/assets/tech'
 import { motion } from 'motion/react'
 
+// Start animating 200px before an element scrolls into view, and only once,
+// so fast scrolling never shows a blank gap.
+const VIEWPORT = { once: true, margin: '0px 0px 200px 0px' }
+
 // One square tile: logo on top, name underneath. Turns into a link when `url` is set.
 const Tile = ({ tool, isDarkMode }) => {
   const src = isDarkMode && tool.iconDark ? tool.iconDark : tool.icon
@@ -35,34 +39,35 @@ const Tile = ({ tool, isDarkMode }) => {
 
 const about = ({isDarkMode}) => {
   return (
-    <motion.div id='about' className='w-full px-[12%] py-10 scroll-mt-20'
-    initial={{opacity: 0}}
-    whileInView= {{opacity: 1}}
-    transition= {{duration: 1}}
+    <div id='about' className='w-full px-[12%] py-10 scroll-mt-20'
     >
         <motion.h4 
         initial={{opacity: 0, y: -20}}
         whileInView= {{opacity: 1, y: 0}}
-        transition= {{duration: 0.5, delay: 0.3}}  
+        viewport={VIEWPORT}
+        transition= {{duration: 0.5, delay: 0.07}}  
         className='text-center mb-2 text-lg font-Ovo'>Introduction
         </motion.h4>
 
         <motion.h2 
         initial={{opacity: 0, y: -20}}
         whileInView= {{opacity: 1, y: 0}}
-        transition= {{duration: 0.8}}
+        viewport={VIEWPORT}
+        transition= {{duration: 0.5}}
         className='text-center text-5xl font-Ovo'>About me</motion.h2>
 
         <motion.div 
         initial={{opacity: 0}}
         whileInView= {{opacity: 1}}
-        transition= {{duration: 0.5, delay: 0.3}}
+        viewport={VIEWPORT}
+        transition= {{duration: 0.5, delay: 0.07}}
         className='flex flex-col w-full lg:flex-row items-center gap-20 my-20'>
            
             <motion.div 
             initial={{opacity: 0, scale: 0.9}}
             whileInView= {{opacity: 1, scale: 1}}
-            transition= {{duration: 0.6}}
+            viewport={VIEWPORT}
+            transition= {{duration: 0.5}}
             className='w-64 sm:w-80 rounded-3xl max-w-none'>
                 <Image src={assets.camping} alt='' className='w-full rounded-3xl' />
             </motion.div>
@@ -70,7 +75,8 @@ const about = ({isDarkMode}) => {
             <motion.div 
             initial={{opacity: 0}}
             whileInView= {{opacity: 1}}
-            transition= {{duration: 0.6, delay: 0.8}}
+            viewport={VIEWPORT}
+            transition= {{duration: 0.5, delay: 0.2}}
             className='flex-1'>
                 {/* DRAFT paragraph: edit freely */}
                 <p className='mb-10 max-w-2xl font-Ovo'>
@@ -80,14 +86,15 @@ const about = ({isDarkMode}) => {
                     an associate degree in Respiratory Therapy, and I&apos;ve added the AWS Certified
                     Cloud Practitioner credential plus Anthropic&apos;s Claude 101 and Claude Code 101
                     courses to my frontend training. I build with React and Next.js, most recently
-                    craftDesk, a booking and payments app for small service shops, and I&apos;m looking
-                    for a junior role where I can keep learning from a team.
+                    CraftDesk, a booking and payments app for small service shops, and I&apos;m looking
+                    for a frontend role where I can keep learning from a team.
                 </p>
 
                 <motion.ul 
                 initial={{opacity: 0}}
                 whileInView= {{opacity: 1}}
-                transition= {{duration: 0.8, delay: 1}}
+                viewport={VIEWPORT}
+                transition= {{duration: 0.5, delay: 0.25}}
                 className='flex flex-wrap gap-3 sm:gap-4'>
                     {contactLinks.map((link) => (
                         <Tile key={link.name} tool={link} isDarkMode={isDarkMode} />
@@ -102,13 +109,15 @@ const about = ({isDarkMode}) => {
                     <motion.h3 
                     initial={{y: 20, opacity: 0}}
                     whileInView= {{y: 0, opacity: 1}}
-                    transition= {{duration: 0.5, delay: 0.3}}
+                    viewport={VIEWPORT}
+                    transition= {{duration: 0.5, delay: 0.07}}
                     className='mb-6 text-xl text-gray-700 font-Ovo dark:text-white/80'>{group.label}</motion.h3>
 
                     <motion.ul 
                     initial={{opacity: 0}}
                     whileInView= {{opacity: 1}}
-                    transition= {{duration: 0.6, delay: 0.5}} 
+                    viewport={VIEWPORT}
+                    transition= {{duration: 0.5, delay: 0.12}} 
                     className='flex flex-wrap items-center gap-3 sm:gap-4'>
                         {group.items.map((tool) => (
                             <Tile key={tool.name} tool={tool} isDarkMode={isDarkMode} />
@@ -117,7 +126,7 @@ const about = ({isDarkMode}) => {
                 </div>
             ))}
         </div>
-    </motion.div>
+    </div>
   )
 }
 
