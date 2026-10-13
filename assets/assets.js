@@ -69,7 +69,7 @@ export const workData = [
         bgImage: '/work-4.png',
     },
     {
-        title: 'Skinstric AI Powered Skincare',
+        title: 'Skinstric',
         description: 'Front-end internship project built from Figma specs. Uses camera or upload image to perform an AI analysis API returns results with confidence rings. Features animated diamond transitions and a responsive layout.',
         stack: ['Next.js', 'React', 'Tailwind CSS', 'Fetch API'],
         live: 'https://skinstric-phi-olive.vercel.app/',
