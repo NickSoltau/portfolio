@@ -6,6 +6,7 @@ import Work from "./components/Work";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import { useSyncExternalStore } from "react";
+import { MotionConfig } from "motion/react";
 
 
 export default function Home() {
@@ -31,14 +32,13 @@ const toggleDarkMode = () => {
 }
 
   return (
-    <>
+    <MotionConfig reducedMotion="user">
     <Navbar isDarkMode= {isDarkMode} toggleDarkMode= {toggleDarkMode} />
     <Header isDarkMode= {isDarkMode} />
     <About isDarkMode= {isDarkMode} />
     <Work isDarkMode= {isDarkMode} />
     <Contact isDarkMode= {isDarkMode} />
     <Footer isDarkMode= {isDarkMode} />
-    
-    </>
+    </MotionConfig>
   );
 }
