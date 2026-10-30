@@ -35,7 +35,7 @@ const Header = () => {
                 transition={{duration: 0.5, delay: 0.25}}
             
             className='text-3xl sm:text-6xl lg:text-[66px] font-Ovo'>
-                frontend developer based in Ohio
+                Frontend Developer Based in Ohio
             </motion.h1>
 
             <motion.p 
