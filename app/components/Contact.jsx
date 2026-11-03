@@ -14,7 +14,7 @@ const Contact = () => {
 
   const onSubmit = async (event) => {
     event.preventDefault();
-    setResult("Sending....");
+    setResult("Sending...");
     const formData = new FormData(event.target);
 
     formData.append("access_key", "d749482b-06e6-4539-b51f-d329a0802ba5");
@@ -101,7 +101,7 @@ const Contact = () => {
             whileHover={{scale: 1.05}}
             transition={{duration: 0.3}}
             className='py-3 px-8 w-max flex items-center justify-between gap-2 bg-black/80 text-white rounded-full mx-auto hover:bg-black duration-500 dark:bg-transparent dark:border-[0.5px] dark:hover:bg-darkHover'
-            type='submit'>Submit Now <Image src={assets.right_arrow_white} alt='' className='w-4' />
+            type='submit'>Send message <Image src={assets.right_arrow_white} alt='' className='w-4' />
             </motion.button>
             <p className='mt-4'>{result}</p>
         </motion.form>
