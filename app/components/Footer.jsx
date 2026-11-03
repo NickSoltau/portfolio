@@ -17,7 +17,7 @@ const Footer = () => {
             </p>
             <ul className='flex items-center gap-10 justify-center mt-4 sm:mt-0'>
                 <li><a href='mailto:Nick.Soltau@gmail.com' className='hover:opacity-80 transition-opacity'>Email</a></li>
-                <li><a href='https://www.linkedin.com/in/nicholas-soltau-075798376' target='_blank' rel='noopener noreferrer' className='hover:opacity-80 transition-opacity'>LinkedIn</a></li>
+                <li><a href='https://www.linkedin.com/in/nicholas-soltau' target='_blank' rel='noopener noreferrer' className='hover:opacity-80 transition-opacity'>LinkedIn</a></li>
                 <li><a href='https://github.com/NickSoltau' target='_blank' rel='noopener noreferrer' className='hover:opacity-80 transition-opacity'>GitHub</a></li>
             </ul>
         </div>
