@@ -16,14 +16,14 @@ const Work = ({isDarkMode}) => {
         whileInView={{y: 0, opacity: 1}}
         viewport={VIEWPORT}
         transition={{delay: 0.07, duration: 0.5}}
-        className='text-center mb-2 text-lg font-Ovo'>My Portfolio</motion.h4>
+        className='text-center mb-2 text-lg font-Ovo'>My portfolio</motion.h4>
 
         <motion.h2
         initial={{y: -20, opacity: 0}}
         whileInView={{y: 0, opacity: 1}}
         viewport={VIEWPORT}
         transition={{delay: 0.12, duration: 0.5}}
-        className='text-center text-5xl font-Ovo'>My Latest Work</motion.h2>
+        className='text-center text-5xl font-Ovo'>My latest work</motion.h2>
 
         <motion.p
         initial={{opacity: 0}}
