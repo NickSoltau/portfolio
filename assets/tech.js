@@ -46,6 +46,6 @@ export const techGroups = [
 // Contact row under the About paragraph
 export const contactLinks = [
     { name: 'Email', icon: mail, invert: true, url: 'mailto:Nick.Soltau@gmail.com' },
-    { name: 'LinkedIn', icon: linkedin, url: 'https://www.linkedin.com/in/nicholas-soltau-075798376' },
+    { name: 'LinkedIn', icon: linkedin, url: 'https://www.linkedin.com/in/nicholas-soltau' },
     { name: 'GitHub', icon: github, invert: true, url: 'https://github.com/NickSoltau' },
 ]
