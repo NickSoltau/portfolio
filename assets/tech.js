@@ -14,6 +14,8 @@ import stripe from './tech/stripe.svg'
 import vercel from './tech/vercel.svg'
 import figma from './tech/figma.svg'
 import vscode from './tech/vscode.svg'
+import git from './tech/git.svg'
+import vite from './tech/vite.svg'
 
 // invert: true  -> the logo is black, so flip it to white in dark mode
 // url           -> optional, turns the tile into a link
@@ -27,6 +29,7 @@ export const techGroups = [
             { name: 'TypeScript', icon: typescript },
             { name: 'React', icon: react },
             { name: 'Next.js', icon: nextjs, invert: true },
+            { name: 'Vite', icon: vite },
             { name: 'Tailwind', icon: tailwind },
         ],
     },
@@ -38,7 +41,8 @@ export const techGroups = [
             { name: 'Stripe', icon: stripe },
             { name: 'Vercel', icon: vercel, invert: true },
             { name: 'Figma', icon: figma },
-            { name: 'VS Code', icon: vscode },
+            { name: 'Git', icon: git },
+            { name: 'GitHub', icon: github, invert: true },
         ],
     },
 ]
