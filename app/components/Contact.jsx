@@ -27,7 +27,7 @@ const Contact = () => {
     const data = await response.json();
 
     if (data.success) {
-      setResult("Form Submitted Successfully");
+      setResult("Form submitted successfully");
       event.target.reset();
     } else {
       console.log("Error", data);
@@ -44,14 +44,14 @@ const Contact = () => {
         whileInView={{y: 0, opacity: 1}}
         viewport={VIEWPORT}
         transition={{delay: 0.07, duration: 0.5}}  
-        className='text-center mb-2 text-lg font-Ovo'>Connect With Me</motion.h4>
+        className='text-center mb-2 text-lg font-Ovo'>Connect with me</motion.h4>
         
         <motion.h2 
         initial={{y: -20, opacity: 0}}
         whileInView={{y: 0, opacity: 1}}
         viewport={VIEWPORT}
         transition={{delay: 0.12, duration: 0.5}}
-        className='text-center text-5xl font-Ovo'>Get In Touch</motion.h2>
+        className='text-center text-5xl font-Ovo'>Get in touch</motion.h2>
 
         <motion.p 
         initial={{opacity: 0}}
