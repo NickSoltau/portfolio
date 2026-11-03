@@ -37,7 +37,7 @@ export const assets = {
 export const workData = [
     {
         title: 'CraftDesk',
-        description: 'Booking and deposit platform for small service businesses. A customer requests a job, the shop approves it, the customer pays a deposit through Stripe, and both sides track its status. Emails go out automatically at each step.',
+        description: 'Booking and deposit app for small service businesses, designed and built end to end. Stripe runs in test mode in the live demo. A customer requests a job, the shop approves it, the customer pays a deposit through Stripe, and both sides track its status. Emails go out automatically at each step.',
         stack: ['React', 'Vite', 'Tailwind', 'Supabase', 'Stripe', 'Resend'],
         live: 'https://craft-desk-rho.vercel.app',
         github: 'https://github.com/NickSoltau/craftDesk',
@@ -70,7 +70,7 @@ export const workData = [
     },
     {
         title: 'Skinstric',
-        description: 'Front-end internship project built from Figma specs. Uses camera or upload image to perform an AI analysis API returns results with confidence rings. Features animated diamond transitions and a responsive layout.',
+        description: 'Front-end internship project built from Figma specs. Take or upload a photo, and the app sends it to an AI analysis API and shows the results with confidence rings. Includes animated diamond transitions and a responsive layout.',
         stack: ['Next.js', 'React', 'Tailwind CSS', 'Fetch API'],
         live: 'https://skinstric-phi-olive.vercel.app/',
         github: 'https://github.com/NickSoltau/Skinstric',
