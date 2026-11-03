@@ -55,7 +55,7 @@ const Header = () => {
                 transition={{duration: 0.5, delay: 0.5}}
                 href='#contact'
                 className='px-10 py-3 border border-white rounded-full bg-black text-white flex items-center gap-2 dark:bg-transparent'
-                >contact me<Image src={assets.right_arrow_white} 
+                >Contact me<Image src={assets.right_arrow_white} 
                 alt='' className='w-4' /></motion.a>
                 <motion.a 
                 initial={{ y: 30, opacity:0}}
@@ -63,7 +63,7 @@ const Header = () => {
                 viewport={VIEWPORT}
                 transition={{duration: 0.5, delay: 0.6}}
                 href="/NickSoltau_Resume.pdf" download 
-                className='px-10 py-3 border rounded-full border-gray-500 flex items-center gap-4 bg-white dark:text-black'>my resume <Image src={assets.download_icon} 
+                className='px-10 py-3 border rounded-full border-gray-500 flex items-center gap-4 bg-white dark:text-black'>My resume <Image src={assets.download_icon} 
                 alt='' className='w-4' /></motion.a>
             </div>
         </div>
