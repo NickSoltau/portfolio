@@ -31,8 +31,7 @@ const Work = ({isDarkMode}) => {
         viewport={VIEWPORT}
         transition={{delay: 0.17, duration: 0.5}}
         className='text-center max-w-2xl mx-auto mt-5 mb-12 font-Ovo '>
-            Welcome to my portfolio! Here, you will find some of the projects I have
-            worked on recently. I tried to include a variety so it doesn&apos;t show different versions of the same thing.
+            Four deployed projects, from a booking and payments app to an AI skincare app built from Figma specs. Each one has a live demo you can try.
         </motion.p>
 
         <motion.div
